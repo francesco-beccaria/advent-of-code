@@ -14,7 +14,9 @@ var (
 	year       = 2020
 	day        = 7
 	input      = utils.GetInput(year, day)
-	inputArray = strings.Split(strings.TrimSpace(input), "\n")
+	inputArray = strings.FieldsFunc(input, func(c rune) bool {
+		return c == '\n'
+	})
 
 	myBagColour = "shiny gold"
 )
