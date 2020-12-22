@@ -14,7 +14,7 @@ var (
 	year       = 2020
 	day        = 7
 	input      = utils.GetInput(year, day)
-	inputArray = strings.Split(input, "\n")
+	inputArray = strings.Split(strings.TrimSpace(input), "\n")
 
 	myBagColour = "shiny gold"
 )
@@ -31,10 +31,6 @@ func parseBagRules(unparsed []string) map[string]map[string]int {
 	parsedBagRules := map[string]map[string]int{}
 
 	for _, s := range unparsed {
-		if s == "" {
-			break
-		}
-
 		innerOuter := strings.Split(s, " bags contain ")
 		outer := innerOuter[0]
 		inner := strings.ReplaceAll(strings.ReplaceAll(innerOuter[1], " bags", ""), " bag", "")
