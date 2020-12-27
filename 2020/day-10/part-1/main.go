@@ -10,12 +10,6 @@ import (
 	"advent-of-code/utils"
 )
 
-type instruction struct {
-	command string
-	value   int
-	pos     int
-}
-
 var (
 	year       = 2020
 	day        = 10
